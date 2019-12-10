@@ -3,16 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e24b4d02-8f94-4884-82ea-322e0b526740" name="Default Changelist" comment="Добавлен Enum с категориями. Переделан метод парса входной пользовательской строки. Добавлен класс CheckUserInput, но позже переделаю.&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Bot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CheckUserInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CheckUserInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GoogleSheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GoogleSheet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ParseUserInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ParseUserInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Bot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Bot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GoogleSheet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GoogleSheet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/parseJava.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tokens/StoredCredential" beforeDir="false" afterPath="$PROJECT_DIR$/tokens/StoredCredential" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +33,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="application.passwordSafe" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -82,6 +72,14 @@
       <option name="presentableId" value="Default" />
       <updated>1575722514570</updated>
     </task>
+    <task id="LOCAL-00001" summary="Добавлен Enum с категориями. Переделан метод парса входной пользовательской строки. Добавлен класс CheckUserInput, но позже переделаю.&quot;">
+      <created>1576008511107</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1576008511107</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -89,6 +87,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Добавлен Enum с категориями. Переделан метод парса входной пользовательской строки. Добавлен класс CheckUserInput, но позже переделаю.&quot;" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="278" y="29" width="800" height="672" key="#Notifications" timestamp="1576008831843">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="278" y="29" width="800" height="672" key="#Notifications/0.0.1366.738@0.0.1366.738" timestamp="1576008831843" />
     <state x="278" y="29" width="800" height="672" key="#Project_Structure" timestamp="1575723824910">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -101,30 +103,30 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="278" y="0" width="790" height="733" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.738@0.0.1366.738" timestamp="1576001513060" />
-    <state x="321" y="0" width="714" height="733" key="CommitChangelistDialog2" timestamp="1576008424534">
+    <state x="321" y="0" width="714" height="733" key="CommitChangelistDialog2" timestamp="1576008618101">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="321" y="0" width="714" height="733" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1576008424534" />
+    <state x="321" y="0" width="714" height="733" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1576008618101" />
     <state x="466" y="126" width="424" height="479" key="FileChooserDialogImpl" timestamp="1575995650109">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="466" y="126" width="424" height="479" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1575995650109" />
-    <state width="1324" height="98" key="GridCell.Tab.0.bottom" timestamp="1576007906654">
+    <state width="1324" height="98" key="GridCell.Tab.0.bottom" timestamp="1576008958465">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1324" height="98" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1576007906654" />
-    <state width="1324" height="98" key="GridCell.Tab.0.center" timestamp="1576007906653">
+    <state width="1324" height="98" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1576008958465" />
+    <state width="1324" height="98" key="GridCell.Tab.0.center" timestamp="1576008958465">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1324" height="98" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1576007906653" />
-    <state width="1324" height="98" key="GridCell.Tab.0.left" timestamp="1576007906652">
+    <state width="1324" height="98" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1576008958465" />
+    <state width="1324" height="98" key="GridCell.Tab.0.left" timestamp="1576008958464">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1324" height="98" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1576007906652" />
-    <state width="1324" height="98" key="GridCell.Tab.0.right" timestamp="1576007906654">
+    <state width="1324" height="98" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1576008958464" />
+    <state width="1324" height="98" key="GridCell.Tab.0.right" timestamp="1576008958465">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1324" height="98" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1576007906654" />
+    <state width="1324" height="98" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1576008958465" />
     <state width="1324" height="220" key="GridCell.Tab.1.bottom" timestamp="1575731254468">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -141,14 +143,18 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1324" height="220" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1575731254468" />
-    <state x="187" y="0" width="1024" height="733" key="SettingsEditor" timestamp="1575995261621">
+    <state x="187" y="0" width="1024" height="733" key="SettingsEditor" timestamp="1576009053658">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="187" y="0" width="1024" height="733" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1575995261621" />
-    <state x="366" y="196" key="com.intellij.ide.util.TipDialog" timestamp="1575994841268">
+    <state x="187" y="0" width="1024" height="733" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1576009053658" />
+    <state x="278" y="104" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1576009176405">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="366" y="196" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1575994841268" />
+    <state x="278" y="104" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1576009176405" />
+    <state x="366" y="196" key="com.intellij.ide.util.TipDialog" timestamp="1576009076232">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="366" y="196" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1576009076232" />
     <state x="480" y="288" width="405" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576008347118">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
