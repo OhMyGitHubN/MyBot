@@ -18,7 +18,6 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class GoogleSheet {
-    private parseJava parseJava = new parseJava();
     private static Sheets sheetsService;
     private static String APPLICATION_NAME = "Google Sheet App";
     private static String SPREADSHEET_ID = "1Y5jeX_ox55RgjUbQyDfaNJ8QFJEfjsIN5waS-kdYR0I";
@@ -76,11 +75,14 @@ public class GoogleSheet {
         return "OK";
     }
 
-    public String writeData(String string) throws IOException, GeneralSecurityException {
+    public void writeData(String userInput) throws IOException, GeneralSecurityException {
         sheetsService = getSheetsService();
-        String category = parseJava.parseString(string);
-        int amount = parseJava.parseInt(string);
+
+        ParseUserInput parseUserInput = new ParseUserInput();
+        String category = CheckUserInput.returnString;
+        int amount = parseUserInput.parseInput(userInput);
         String date = new SimpleDateFormat("dd.MM.yyyy", Locale.getDefault()).format(new Date());
+
         //Write DATA
          ValueRange appendBody = new ValueRange()
                 .setValues(Arrays.asList(
@@ -93,7 +95,7 @@ public class GoogleSheet {
                 .setInsertDataOption("INSERT_ROWS")
                 .setIncludeValuesInResponse(true)
                 .execute();
-        return "OK";
+        //return "OK";
     }
 
     public String updateData() throws IOException, GeneralSecurityException {

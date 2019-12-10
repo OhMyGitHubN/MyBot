@@ -1,53 +1,32 @@
-public class parseJava {
+public class ParseUserInput {
 
-    public String parseString(String str) {
-        String s = "";
+    public int parseInput(String str) {
+        //String userPartString = "";
+        int userPartNumber;
         if (str.contains(" ")) {
             if (Character.isLetter(str.charAt(0))) {
                 String[] parts = str.split("(?<=\\D)(?=\\d)");
                 String s1 = parts[0];
-                s = s1.substring(0, s1.length() - 1);
+                //userPartString = s1.substring(0, s1.length() - 1);git
+                userPartNumber = Integer.parseInt(parts[1]);
             } else {
                 String[] parts = str.split("(?<=\\d)(?=\\D)");
                 String s1 = parts[1];
-                s = s1.substring(1);
+                //userPartString = s1.substring(1);
+                userPartNumber = Integer.parseInt(parts[0]);
             }
         } else {
             if (Character.isLetter(str.charAt(0))) {
                 String[] parts = str.split("(?<=\\D)(?=\\d)");
-                s = parts[0];
+                //userPartString = parts[0];
+                userPartNumber = Integer.parseInt(parts[1]);
             } else {
                 String[] parts = str.split("(?<=\\d)(?=\\D)");
-                s = parts[1];
+                //userPartString = parts[1];
+                userPartNumber = Integer.parseInt(parts[0]);
             }
         }
-        s = s.substring(0,1).toUpperCase() + s.substring(1);
-        return s;
+        return userPartNumber;
     }
 
-    public int parseInt(String str) {
-        int x = 0;
-        if (str.contains(" ")) {
-            if (Character.isLetter(str.charAt(0))) {
-                String[] parts = str.split("(?<=\\D)(?=\\d)");
-                /*String s1 = parts[1];
-                s = s1.substring(0, s1.length() -1);*/
-                x = Integer.parseInt(parts[1]);
-            } else {
-                String[] parts = str.split("(?<=\\d)(?=\\D)");
-                /*String s1 = parts[1];
-                s = s1.substring(1);*/
-                x = Integer.parseInt(parts[0]);
-            }
-        } else {
-            if (Character.isLetter(str.charAt(0))) {
-                String[] parts = str.split("(?<=\\D)(?=\\d)");
-                x = Integer.parseInt(parts[1]);
-            } else {
-                String[] parts = str.split("(?<=\\d)(?=\\D)");
-                x = Integer.parseInt(parts[0]);
-            }
-        }
-        return x;
-    }
 }

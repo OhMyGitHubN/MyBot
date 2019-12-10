@@ -18,6 +18,7 @@ import java.util.List;
 public class Bot extends TelegramLongPollingBot {
 
     private GoogleSheet googleSheet = new GoogleSheet();
+    private CheckUserInput checkUserInput = new CheckUserInput();
     private ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
 
     String botToken;
@@ -57,8 +58,10 @@ public class Bot extends TelegramLongPollingBot {
 
         Long chatId = update.getMessage().getChatId();
         String inputText = update.getMessage().getText();
-
+        Message message = update.getMessage();
         SendMessage sendMessage = new SendMessage().setChatId(chatId);
+        checkUserInput.checkInput(sendMessage, inputText);
+
 
         /*if (inputText.startsWith("/start")) {
             sendMessage.setChatId(chatId);
@@ -70,33 +73,54 @@ public class Bot extends TelegramLongPollingBot {
             }
         }*/
         try {
-            if (inputText.startsWith("/start")) {
-                sendMessage.setText("Привет! Меня зовут ПростБот. Я веду учёт твоих расходов.\n" +
-                        "Присылай мне свои траты в форме продукты 250" +
-                        ", и я запишу их в категорию 'продукты' в твоей Google-таблице.\n" +
-                        "\nСписок доступных команд можешь посмотреть по:\n" +
-                        "/help");
-                execute(sendMessage);
-            } else if(inputText.equalsIgnoreCase("/menu")){
-                sendMessage.setReplyMarkup(replyKeyboardMarkup);
-                sendMessage.setText(getMessage(inputText));
-                execute(sendMessage);
-            } else if(inputText.equalsIgnoreCase("/help")) {
-                sendMessage.setText("\nДоступные команды в данный момент:\n" +
-                        "/help - список доступных команд\n" +
-                        "/menu - вывод меню\n" +
-                        "/table - ссылка на Google-таблицу.");
-                execute(sendMessage);
-            } else if(inputText.equalsIgnoreCase("/table")) {
-                //reference to google table
+            if(checkUserInput.flag) {
+                if(checkUserInput.returnMessage != null)
+                    execute(checkUserInput.returnMessage);
+                else {
+                    sendMessage.setReplyMarkup(replyKeyboardMarkup);
+                    sendMessage.setText(getMessage(inputText));
+                    execute(sendMessage);
+                }
             } else {
+                googleSheet.writeData(inputText);
+                sendMessage.setText("Данные добавлены!");
+                execute(sendMessage);
+            }
+            /*if(!inputText.isEmpty()) {
+                if (inputText.startsWith("/start")) {
+                    sendMessage.setText("Привет! Меня зовут ПростБот. Я веду учёт твоих расходов.\n" +
+                            "Присылай мне свои траты в форме продукты 250" +
+                            ", и я запишу их в категорию 'продукты' в твоей Google-таблице.\n" +
+                            "\nСписок доступных команд можешь посмотреть по:\n" +
+                            "/help");
+                    execute(sendMessage);
+                } else if (inputText.equalsIgnoreCase("/menu")) {
+                    sendMessage.setReplyMarkup(replyKeyboardMarkup);
+                    sendMessage.setText(getMessage(inputText));
+                    execute(sendMessage);
+                } else if (inputText.equalsIgnoreCase("/help")) {
+                    sendMessage.setText("\nДоступные команды в данный момент:\n" +
+                            "/help - список доступных команд\n" +
+                            "/menu - вывод меню\n" +
+                            "/table - ссылка на Google-таблицу.");
+                    execute(sendMessage);
+                } else if (inputText.equalsIgnoreCase("/table")) {
+                    sendMessage.setText("https://docs.google.com/spreadsheets/d/1Y5jeX_ox55RgjUbQyDfaNJ8QFJEfjsIN5waS-kdYR0I/edit#gid=0");
+                    execute(sendMessage);  //пока так
+                *//*} else if() {
+*//*
+                } else {
                     googleSheet.writeData(inputText);
                     sendMessage.setText("Данные добавлены!");
-                /*sendMessage.setText("Я не знаю такой команды. Попробуй\n" +
-                        "/help)");
-                execute(sendMessage);*/
-            }
-
+                    execute(sendMessage);
+                    *//*sendMessage.setText("Я не знаю такой команды. Попробуй\n" +
+                            "/help)");
+                    execute(sendMessage);*//*
+                }
+            } else {
+                sendMessage.setText("Что-то не так. Попробуйте ещё раз!");
+                execute(sendMessage);
+            }*/
         } catch (TelegramApiException e) {
             e.printStackTrace();
         } catch (IOException e) {
