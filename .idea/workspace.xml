@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e24b4d02-8f94-4884-82ea-322e0b526740" name="Default Changelist" comment="Добавлен Enum с категориями. Переделан метод парса входной пользовательской строки. Добавлен класс CheckUserInput, но позже переделаю.&quot;">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="e24b4d02-8f94-4884-82ea-322e0b526740" name="Default Changelist" comment="Добавлен Enum с категориями. Переделан метод парса входной пользовательской строки. Добавлен класс CheckUserInput, но позже переделаю.&quot;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
