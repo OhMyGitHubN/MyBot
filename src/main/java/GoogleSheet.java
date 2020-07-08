@@ -34,6 +34,7 @@ public class GoogleSheet {
                 GoogleNetHttpTransport.newTrustedTransport(), JacksonFactory.getDefaultInstance(),
                 clientSecrets, scopes)
                 .setDataStoreFactory(new FileDataStoreFactory(new java.io.File("tokens")))
+                .setAccessType("offline")
                 .build();
         Credential credential = new AuthorizationCodeInstalledApp(
                 flow, new LocalServerReceiver())
@@ -132,8 +133,3 @@ public class GoogleSheet {
         return "OK";
     }
 }
-
-
-    /*public static void main(String[] args) throws IOException, GeneralSecurityException {
-        sheetsService = getSheetsService();
-    }*/
