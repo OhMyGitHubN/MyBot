@@ -24,7 +24,7 @@ public class Bot extends TelegramLongPollingBot {
     String botToken;
     String botUsername;
     private static final Logger log = Logger.getLogger(Bot.class);
-    final int RECONNECT_PAUSE =10000;
+    final int RECONNECT_PAUSE =30000;
 
     //private String[] data = { "Продукты", "продукты", ""}
 

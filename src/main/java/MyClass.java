@@ -1,4 +1,3 @@
-
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import org.telegram.telegrambots.ApiContextInitializer;
@@ -8,8 +7,8 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 
-public class Main {
-    private static final Logger log = Logger.getLogger(Main.class);
+public class MyClass {
+    private static final Logger log = Logger.getLogger(MyClass.class);
 
     public static void main(String[] args) throws IOException, GeneralSecurityException {
 
