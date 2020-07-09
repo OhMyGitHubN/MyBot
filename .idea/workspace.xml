@@ -2,33 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bdc4b0a8-f151-44c2-8cbf-f59296e78094" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_13_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_1_3_72.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_common_1_3_72.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_3_72.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_jdk8_1_3_72.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_test_1_3_72.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_test_common_1_3_72.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Bot.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CategoryTitle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CheckUserInput.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GoogleSheet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MyClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ParseUserInput.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ParseUserInputTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Bot.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CategoryTitle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CheckUserInput.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GoogleSheet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MyClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ParseUserInput.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ParseUserInputTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tokens/StoredCredential" beforeDir="false" afterPath="$PROJECT_DIR$/tokens/StoredCredential" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
