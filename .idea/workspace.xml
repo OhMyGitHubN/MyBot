@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bdc4b0a8-f151-44c2-8cbf-f59296e78094" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GoogleSheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GoogleSheet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GoogleSheet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GoogleSheet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tokens/StoredCredential" beforeDir="false" afterPath="$PROJECT_DIR$/tokens/StoredCredential" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +23,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
@@ -62,6 +63,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="166" y="0" width="1024" height="735" key="#Project_Structure" timestamp="1594293571707">
+      <screen x="0" y="0" width="1366" height="740" />
+    </state>
+    <state x="166" y="0" width="1024" height="735" key="#Project_Structure/0.0.1366.740@0.0.1366.740" timestamp="1594293571707" />
     <state x="398" y="174" width="559" height="385" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594241673181">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
