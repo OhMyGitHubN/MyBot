@@ -23,7 +23,7 @@
                     <assembleDirectory>target</assembleDirectory>
                     <programs>
                         <program>
-                            <mainClass>com.telegram.bot.MainMethod.kt</mainClass>
+                            <mainClass>com.telegram.bot.Main.kt</mainClass>
                             <name>TelegramBot</name>
                         </program>
                     </programs>
