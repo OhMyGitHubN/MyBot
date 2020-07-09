@@ -21,6 +21,8 @@ public class GoogleSheet {
     private static Sheets sheetsService;
     private static String APPLICATION_NAME = "Google Sheet App";
     private static String SPREADSHEET_ID = "1Y5jeX_ox55RgjUbQyDfaNJ8QFJEfjsIN5waS-kdYR0I";
+//    https://developers.google.com/sheets/api/quickstart/java to get your credentials
+
 
     private static Credential authorize() throws IOException, GeneralSecurityException {
         InputStream in = GoogleSheet.class.getResourceAsStream("credentials.json");
