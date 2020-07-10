@@ -17,7 +17,6 @@ class Bot(private val botToken:String?, private val botUserName:String?): Telegr
 
     private val googleSheet = GoogleSheet()
     private val checkUserInput = CheckUserInput()
-    private val replyKeyboardMarkup = ReplyKeyboardMarkup()
     private var count = 0
 
     private val log = Logger.getLogger(Bot::class.java)
@@ -39,11 +38,15 @@ class Bot(private val botToken:String?, private val botUserName:String?): Telegr
                 setMyKeyboard(sendMessage)
                 execute(sendMessage)
             } else {
-                val category = inputText.trim().asSequence().filter { it.isLetter() }.joinToString("")
-                val amount = inputText.trim().asSequence().filter { it.isDigit() }.joinToString("").toInt()
-                googleSheet.writeData(category, amount)
-                sendMessage.text = "Данные добавлены!"
-                execute(sendMessage)
+                val category = checkUserInput.parseUserInputToCategory(inputText)
+                val amount = checkUserInput.parseUserInputToAmount(inputText)
+                if(!amount.isNullOrEmpty() && !category.isNullOrEmpty()) {
+                    googleSheet.writeData(category, amount.toDouble())
+                    sendMessage.text = "Данные добавлены!"
+                } else {
+                    sendMessage.text = "Введены неправильные данные!"
+                }
+                    execute(sendMessage)
             }
         } catch (e: TelegramApiException) {
             log.error("TelegramApiException")
@@ -60,6 +63,7 @@ class Bot(private val botToken:String?, private val botUserName:String?): Telegr
     private fun setMyKeyboard(sendMessage: SendMessage) {
         if(count >= 1) return
         else {
+            val replyKeyboardMarkup = ReplyKeyboardMarkup()
             sendMessage.replyMarkup = replyKeyboardMarkup
             val keyboard: MutableList<KeyboardRow> = ArrayList()
             val keyboardRow1 = KeyboardRow()

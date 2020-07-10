@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bdc4b0a8-f151-44c2-8cbf-f59296e78094" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/telegram/bot/Bot.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/telegram/bot/Bot.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/telegram/bot/CheckUserInput.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/telegram/bot/CheckUserInput.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/telegram/bot/GoogleSheets.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/telegram/bot/GoogleSheets.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,10 +131,10 @@
       <screen x="0" y="0" width="1366" height="740" />
     </state>
     <state x="460" y="237" width="435" height="259" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.740@0.0.1366.740" timestamp="1594322030878" />
-    <state x="416" y="119" width="524" height="495" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594294582633">
+    <state x="416" y="119" width="524" height="495" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594340841337">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state x="416" y="119" width="524" height="495" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.740@0.0.1366.740" timestamp="1594294582633" />
+    <state x="416" y="119" width="524" height="495" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.740@0.0.1366.740" timestamp="1594340841337" />
     <state x="465" y="150" width="434" height="432" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1594304742051">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
@@ -140,22 +143,22 @@
       <screen x="0" y="0" width="1366" height="740" />
     </state>
     <state x="466" y="127" width="424" height="479" key="FileChooserDialogImpl/0.0.1366.740@0.0.1366.740" timestamp="1594324547944" />
-    <state width="662" height="178" key="GridCell.Tab.0.bottom" timestamp="1594338411038">
+    <state width="662" height="178" key="GridCell.Tab.0.bottom" timestamp="1594340972100">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state width="662" height="178" key="GridCell.Tab.0.bottom/0.0.1366.740@0.0.1366.740" timestamp="1594338411038" />
-    <state width="662" height="178" key="GridCell.Tab.0.center" timestamp="1594338411037">
+    <state width="662" height="178" key="GridCell.Tab.0.bottom/0.0.1366.740@0.0.1366.740" timestamp="1594340972100" />
+    <state width="662" height="178" key="GridCell.Tab.0.center" timestamp="1594340972100">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state width="662" height="178" key="GridCell.Tab.0.center/0.0.1366.740@0.0.1366.740" timestamp="1594338411037" />
-    <state width="662" height="178" key="GridCell.Tab.0.left" timestamp="1594338411037">
+    <state width="662" height="178" key="GridCell.Tab.0.center/0.0.1366.740@0.0.1366.740" timestamp="1594340972100" />
+    <state width="662" height="178" key="GridCell.Tab.0.left" timestamp="1594340972099">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state width="662" height="178" key="GridCell.Tab.0.left/0.0.1366.740@0.0.1366.740" timestamp="1594338411037" />
-    <state width="662" height="178" key="GridCell.Tab.0.right" timestamp="1594338411037">
+    <state width="662" height="178" key="GridCell.Tab.0.left/0.0.1366.740@0.0.1366.740" timestamp="1594340972099" />
+    <state width="662" height="178" key="GridCell.Tab.0.right" timestamp="1594340972100">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state width="662" height="178" key="GridCell.Tab.0.right/0.0.1366.740@0.0.1366.740" timestamp="1594338411037" />
+    <state width="662" height="178" key="GridCell.Tab.0.right/0.0.1366.740@0.0.1366.740" timestamp="1594340972100" />
     <state width="1324" height="221" key="GridCell.Tab.1.bottom" timestamp="1594305834516">
       <screen x="0" y="0" width="1366" height="740" />
     </state>

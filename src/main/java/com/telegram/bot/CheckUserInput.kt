@@ -2,15 +2,16 @@ package com.telegram.bot
 
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage
 import java.util.*
+import javax.validation.constraints.Digits
 
 class CheckUserInput {
 //    companion object { var flag: Boolean = false }
     var flag: Boolean = false
 
-    fun checkInput(sendMessage: SendMessage, userInputText: String) {
+    fun checkInput(sendMessage: SendMessage, userInput: String) {
         flag = true
-        if (userInputText.isNotEmpty()) {
-            when(userInputText) {
+        if (userInput.isNotEmpty()) {
+            when(userInput) {
                 "/start" ->
                     sendMessage.text = """
                         Привет! Меня зовут ПростБот. Я веду учёт твоих расходов.
@@ -36,11 +37,18 @@ class CheckUserInput {
                 }
                 else -> {
                     for (t in CategoryTitle.values()) {
-                        if (userInputText.capitalize().contains(t.title)) flag = false
+                        if (userInput.capitalize().contains(t.title)) flag = false
                         else sendMessage.text = "Что-то не так. Попробуйте снова.\n /help"
                     }
                 }
             }
         }
     }
+
+    fun parseUserInputToCategory(userInput: String): String? = userInput.trim().asSequence()
+            .filter { it.isLetter() }.joinToString("")
+
+    fun parseUserInputToAmount(userInput: String): String? = userInput.trim().asSequence()
+            .filter { !it.isLetter() }.joinToString("")
+
 }

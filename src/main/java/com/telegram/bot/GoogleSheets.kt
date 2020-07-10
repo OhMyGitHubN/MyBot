@@ -81,12 +81,12 @@ class GoogleSheet {
     }
 
     @Throws(IOException::class, GeneralSecurityException::class)
-    fun writeData(userString: String, userInt: Int) {
+    fun writeData(userCategory: String, userAmount: Double) {
         sheetsService = getSheetsService()
         val date = SimpleDateFormat("dd.MM.yyyy", Locale.getDefault()).format(Date())
 
         //Write DATA
-        val appendBody = ValueRange().setValues(listOf(listOf(date, userString, userInt)))
+        val appendBody = ValueRange().setValues(listOf(listOf(date, userCategory, userAmount)))
 
         val appendResult: AppendValuesResponse? = sheetsService?.spreadsheets()?.values()
                 ?.append(SPREADSHEET_ID, "sheet1", appendBody)
