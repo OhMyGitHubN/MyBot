@@ -12,7 +12,7 @@ import java.security.GeneralSecurityException
         try {
             BasicConfigurator.configure()
             ApiContextInitializer.init()
-            val bot = Bot("846932094:AAH28OGqA--u9tIM76TF5qPHISnzQpkccug", "@NahalnyBot")
+            val bot = Bot("846932094:AAH28OGqA--u9tIM76TF5qPHISnzQpkccug", "@MyBot")
             bot.botConnect()
 
         } catch (e: IOException) {
