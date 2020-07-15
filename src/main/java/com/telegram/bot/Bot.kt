@@ -38,10 +38,12 @@ class Bot(private val botToken:String?, private val botUserName:String?): Telegr
                 setMyKeyboard(sendMessage)
                 execute(sendMessage)
             } else {
-                val category = checkUserInput.parseUserInputToCategory(inputText)
-                val amount = checkUserInput.parseUserInputToAmount(inputText)
-                if(!amount.isNullOrEmpty() && !category.isNullOrEmpty()) {
-                    googleSheet.writeData(category, amount.toDouble())
+//                val category = checkUserInput.parseUserInputToCategory(inputText)
+//                val amount = checkUserInput.parseUserInputToAmount(inputText)
+//                if(!amount.isNullOrEmpty() && !category.isNullOrEmpty()) {
+                val list = inputText.partition { it.isLetter() }.toList()
+                if(list.all { it.isNotEmpty() }) {
+                    googleSheet.writeData(list[0], list[1].toDouble())
                     sendMessage.text = "Данные добавлены!"
                 } else {
                     sendMessage.text = "Введены неправильные данные!"
@@ -63,14 +65,16 @@ class Bot(private val botToken:String?, private val botUserName:String?): Telegr
     private fun setMyKeyboard(sendMessage: SendMessage) {
         if(count >= 1) return
         else {
-            val replyKeyboardMarkup = ReplyKeyboardMarkup()
+            val replyKeyboardMarkup = ReplyKeyboardMarkup().apply {
+                selective = true
+                resizeKeyboard = true
+                oneTimeKeyboard = true
+            }
             sendMessage.replyMarkup = replyKeyboardMarkup
             val keyboard: MutableList<KeyboardRow> = ArrayList()
             val keyboardRow1 = KeyboardRow()
             val keyboardRow2 = KeyboardRow()
-            replyKeyboardMarkup.selective = true
-            replyKeyboardMarkup.resizeKeyboard = true
-            replyKeyboardMarkup.oneTimeKeyboard = true
+
             //if(message.equalsIgnoreCase("/menu")) {
             //keyboard.clear();
             //keyboardRow1.clear();

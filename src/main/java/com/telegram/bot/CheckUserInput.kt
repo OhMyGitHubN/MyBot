@@ -45,10 +45,10 @@ class CheckUserInput {
         }
     }
 
-    fun parseUserInputToCategory(userInput: String): String? = userInput.trim().asSequence()
-            .filter { it.isLetter() }.joinToString("")
-
-    fun parseUserInputToAmount(userInput: String): String? = userInput.trim().asSequence()
-            .filter { !it.isLetter() }.joinToString("")
+//    fun parseUserInputToCategory(userInput: String): String? = userInput.trim().asSequence()
+//            .filter { it.isLetter() }.joinToString("")
+//
+//    fun parseUserInputToAmount(userInput: String): String? = userInput.trim().asSequence()
+//            .filter { !it.isLetter() }.joinToString("")
 
 }
