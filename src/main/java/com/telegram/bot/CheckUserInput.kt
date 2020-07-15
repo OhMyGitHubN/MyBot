@@ -7,7 +7,7 @@ import javax.validation.constraints.Digits
 class CheckUserInput {
     //    companion object { var flag: Boolean = false }
     private val helloText = """ 
-        Привет! Меня зовут ПростБот. Я веду учёт твоих расходов.
+        Привет! Меня зовут ОМойБот. Я веду учёт твоих расходов.
         Присылай мне свои траты в форме продукты 250, и я запишу их в категорию 'Продукты' в твоей Google-таблице.
         Список доступных команд можешь посмотреть по:
         /help
