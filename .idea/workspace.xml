@@ -5,6 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/telegram/bot/Bot.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/telegram/bot/Bot.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/telegram/bot/CheckUserInput.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/telegram/bot/CheckUserInput.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/telegram/bot/GoogleSheets.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/telegram/bot/GoogleSheets.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tokens/StoredCredential" beforeDir="false" afterPath="$PROJECT_DIR$/tokens/StoredCredential" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +34,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../KotlinProject" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
@@ -130,10 +132,10 @@
       <screen x="0" y="0" width="1366" height="740" />
     </state>
     <state x="460" y="237" width="435" height="259" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.740@0.0.1366.740" timestamp="1594322030878" />
-    <state x="416" y="119" width="524" height="495" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594340841337">
+    <state x="416" y="119" width="524" height="495" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594815991427">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state x="416" y="119" width="524" height="495" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.740@0.0.1366.740" timestamp="1594340841337" />
+    <state x="416" y="119" width="524" height="495" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.740@0.0.1366.740" timestamp="1594815991427" />
     <state x="465" y="150" width="434" height="432" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1594304742051">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
@@ -142,38 +144,38 @@
       <screen x="0" y="0" width="1366" height="740" />
     </state>
     <state x="466" y="127" width="424" height="479" key="FileChooserDialogImpl/0.0.1366.740@0.0.1366.740" timestamp="1594470784144" />
-    <state width="1324" height="178" key="GridCell.Tab.0.bottom" timestamp="1594400855758">
+    <state width="1324" height="178" key="GridCell.Tab.0.bottom" timestamp="1594834242506">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state width="1324" height="178" key="GridCell.Tab.0.bottom/0.0.1366.740@0.0.1366.740" timestamp="1594400855758" />
-    <state width="1324" height="178" key="GridCell.Tab.0.center" timestamp="1594400855757">
+    <state width="1324" height="178" key="GridCell.Tab.0.bottom/0.0.1366.740@0.0.1366.740" timestamp="1594834242506" />
+    <state width="1324" height="178" key="GridCell.Tab.0.center" timestamp="1594834242505">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state width="1324" height="178" key="GridCell.Tab.0.center/0.0.1366.740@0.0.1366.740" timestamp="1594400855757" />
-    <state width="1324" height="178" key="GridCell.Tab.0.left" timestamp="1594400855756">
+    <state width="1324" height="178" key="GridCell.Tab.0.center/0.0.1366.740@0.0.1366.740" timestamp="1594834242505" />
+    <state width="1324" height="178" key="GridCell.Tab.0.left" timestamp="1594834242504">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state width="1324" height="178" key="GridCell.Tab.0.left/0.0.1366.740@0.0.1366.740" timestamp="1594400855756" />
-    <state width="1324" height="178" key="GridCell.Tab.0.right" timestamp="1594400855758">
+    <state width="1324" height="178" key="GridCell.Tab.0.left/0.0.1366.740@0.0.1366.740" timestamp="1594834242504" />
+    <state width="1324" height="178" key="GridCell.Tab.0.right" timestamp="1594834242505">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state width="1324" height="178" key="GridCell.Tab.0.right/0.0.1366.740@0.0.1366.740" timestamp="1594400855758" />
-    <state width="1324" height="221" key="GridCell.Tab.1.bottom" timestamp="1594305834516">
+    <state width="1324" height="178" key="GridCell.Tab.0.right/0.0.1366.740@0.0.1366.740" timestamp="1594834242505" />
+    <state width="1324" height="221" key="GridCell.Tab.1.bottom" timestamp="1594821992819">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state width="1324" height="221" key="GridCell.Tab.1.bottom/0.0.1366.740@0.0.1366.740" timestamp="1594305834516" />
-    <state width="1324" height="221" key="GridCell.Tab.1.center" timestamp="1594305834515">
+    <state width="1324" height="221" key="GridCell.Tab.1.bottom/0.0.1366.740@0.0.1366.740" timestamp="1594821992819" />
+    <state width="1324" height="221" key="GridCell.Tab.1.center" timestamp="1594821992817">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state width="1324" height="221" key="GridCell.Tab.1.center/0.0.1366.740@0.0.1366.740" timestamp="1594305834515" />
-    <state width="1324" height="221" key="GridCell.Tab.1.left" timestamp="1594305834515">
+    <state width="1324" height="221" key="GridCell.Tab.1.center/0.0.1366.740@0.0.1366.740" timestamp="1594821992817" />
+    <state width="1324" height="221" key="GridCell.Tab.1.left" timestamp="1594821992815">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state width="1324" height="221" key="GridCell.Tab.1.left/0.0.1366.740@0.0.1366.740" timestamp="1594305834515" />
-    <state width="1324" height="221" key="GridCell.Tab.1.right" timestamp="1594305834516">
+    <state width="1324" height="221" key="GridCell.Tab.1.left/0.0.1366.740@0.0.1366.740" timestamp="1594821992815" />
+    <state width="1324" height="221" key="GridCell.Tab.1.right" timestamp="1594821992817">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state width="1324" height="221" key="GridCell.Tab.1.right/0.0.1366.740@0.0.1366.740" timestamp="1594305834516" />
+    <state width="1324" height="221" key="GridCell.Tab.1.right/0.0.1366.740@0.0.1366.740" timestamp="1594821992817" />
     <state x="187" y="4" key="SettingsEditor" timestamp="1594241232005">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
@@ -188,7 +190,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-function">
           <url>file://$PROJECT_DIR$/src/main/java/com/telegram/bot/GoogleSheets.kt</url>
-          <line>51</line>
+          <line>52</line>
           <properties class="com.telegram.bot.GoogleSheet" method="getSheetsService">
             <option name="EMULATED" value="true" />
           </properties>
@@ -196,11 +198,16 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-function">
           <url>file://$PROJECT_DIR$/src/main/java/com/telegram/bot/GoogleSheets.kt</url>
-          <line>83</line>
+          <line>103</line>
           <properties class="com.telegram.bot.GoogleSheet" method="writeData">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/telegram/bot/Bot.kt</url>
+          <line>42</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -16,7 +16,8 @@ import java.io.File
 import java.io.IOException
 import java.io.InputStreamReader
 import java.security.GeneralSecurityException
-import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 class GoogleSheet {
@@ -59,31 +60,50 @@ class GoogleSheet {
     }
 
     @Throws(IOException::class, GeneralSecurityException::class)
-    fun readData(): String {
+    fun readData(month: String): String {
         sheetsService = getSheetsService()
+
         //Read DATA
-        val range = "'Sheet1'!A1:F3"
+//        val range = "'Sheet1'!A5:C5"
+        val range = "'Sheet1'"
         val response: ValueRange? = sheetsService?.spreadsheets()?.values()?.get(SPREADSHEET_ID, range)?.execute()
         val values = response?.getValues()
+        val myResponse: StringBuilder = StringBuilder()
+        var sum: Map<String, Double?>? = null
 
-        if (values == null || values.isEmpty()) {
-            println("No data found")
-        } else {
-            for (row in values) {
-                for (i in row.indices) {
-                    //System.out.printf("%s %s from %s\n", row.get(5), row.get(4), row.get(1));
-                    print(row[i].toString() + " ")
-                }
+        values?.let {
+            if (values.isNotEmpty()) {
+                sum = it.asSequence().filter { list -> (list[0] as String).contains(month) }
+//                        .map { row -> (row[2] as String).toInt().also {
+//                                myResponse.append("${row[0]}    ${row[1]}    ${row[2]}    \n") } }
+//                        .reduce { it1, it2 -> it1 + it2 }
+
+//                        .groupByTo (HashMap(), { row -> row[1].also {
+//                                myResponse.append("${row[0]}    ${row[1]}    ${row[2]}    \n") }},
+//                                { row -> (row[2] as String).toInt() })
+                        .groupingBy { row -> (row[1] as String).also {
+                            myResponse.append(
+                                    String.format("%12.17s      %-12.12s    %10.10s%n", row[0], row[1], row[2])) }}
+//                            "${row[0]}  ${row[1]}   ${row[2]}\n") }}
+                        .aggregate { key, accumulator: Double?, element: List<Any>, first ->
+                            if (first) (element[2] as String).toDouble()
+                            else accumulator?.plus((element[2] as String).toDouble())
+                        }
             }
         }
-        log.info("Read data OK")
-        return "OK"
+        if (myResponse.isNotEmpty()) {
+            myResponse.append("\nСумма: \n")
+            sum?.let {
+                for ((k, v) in it.entries) {
+                    myResponse.append(String.format("%-18.18s%10.10s\n", k, v)) } }
+        } else myResponse.append("Нет данных")
+        return myResponse.toString()
     }
 
     @Throws(IOException::class, GeneralSecurityException::class)
     fun writeData(userCategory: String, userAmount: Double) {
         sheetsService = getSheetsService()
-        val date = SimpleDateFormat("dd.MM.yyyy", Locale.getDefault()).format(Date())
+        val date = DateTimeFormatter.ofPattern("dd MMMM yyyy", Locale.getDefault()).format(LocalDate.now())
 
         //Write DATA
         val appendBody = ValueRange().setValues(listOf(listOf(date, userCategory, userAmount)))
@@ -116,11 +136,10 @@ class GoogleSheet {
         sheetsService = getSheetsService()
         //Delete rows
         val deleteRequest = DeleteDimensionRequest()
-                .setRange(
-                        DimensionRange()
-                                .setSheetId(0)
-                                .setDimension("ROWS")
-                                .setStartIndex(3)
+                .setRange(DimensionRange()
+                        .setSheetId(0)
+                        .setDimension("ROWS")
+                        .setStartIndex(3)
                 )
         val requests: MutableList<Request> = ArrayList()
         requests.add(Request().setDeleteDimension(deleteRequest))

@@ -11,9 +11,10 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException
 import org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException
 import java.io.IOException
 import java.security.GeneralSecurityException
+import java.time.LocalDate
 import java.util.*
 
-class Bot(private val botToken:String?, private val botUserName:String?): TelegramLongPollingBot() {
+class Bot(private val botToken: String?, private val botUserName: String?) : TelegramLongPollingBot() {
 
     private val googleSheet = GoogleSheet()
     private val checkUserInput = CheckUserInput()
@@ -34,36 +35,36 @@ class Bot(private val botToken:String?, private val botUserName:String?): Telegr
         val sendMessage = SendMessage().setChatId(chatId)
         try {
             checkUserInput.checkInput(sendMessage, inputText)
-            if (checkUserInput.flag) {
-                setMyKeyboard(sendMessage)
-                execute(sendMessage)
+            if (checkUserInput.checker == "commands") {
+//                setMyKeyboard(sendMessage)
+            } else if (checkUserInput.checker == "expenses") {
+                if (inputText.contains("этот", true))
+                    sendMessage.text = googleSheet.readData(intMonthToString(LocalDate.now().monthValue))
+                else
+                    sendMessage.text = googleSheet.readData(intMonthToString(LocalDate.now().monthValue.minus(1)))
             } else {
-//                val category = checkUserInput.parseUserInputToCategory(inputText)
-//                val amount = checkUserInput.parseUserInputToAmount(inputText)
-//                if(!amount.isNullOrEmpty() && !category.isNullOrEmpty()) {
                 val list = inputText.partition { it.isLetter() }.toList()
-                if(list.all { it.isNotEmpty() }) {
+                if (list.all { it.isNotEmpty() }) {
                     googleSheet.writeData(list[0], list[1].toDouble())
                     sendMessage.text = "Данные добавлены!"
-                } else {
-                    sendMessage.text = "Введены неправильные данные!"
-                }
-                    execute(sendMessage)
+                } else sendMessage.text = "Введены неправильные данные!"
             }
-        } catch (e: TelegramApiException) {
-            log.error("TelegramApiException")
-            e.printStackTrace(System.out)
-        } catch (e: IOException) {
-            log.error("IOException")
-            e.printStackTrace(System.out)
-        } catch (e: GeneralSecurityException) {
-            log.error("GeneralSecurityException")
-            e.printStackTrace(System.out)
+            execute(sendMessage)
+        } catch (e: Exception) {
+            when (e) {
+                is TelegramApiException -> log.error("TelegramApiException")
+                is IOException -> log.error("IOException")
+                is GeneralSecurityException -> log.error("GeneralSecurityException")
+                is RuntimeException -> log.error("RuntimeException")
+            }
+            e.printStackTrace()
+            sendMessage.text = "Произошла ошибка. Попробуйте снова.\n /help"
+            execute(sendMessage)
         }
     }
 
     private fun setMyKeyboard(sendMessage: SendMessage) {
-        if(count >= 1) return
+        if (count >= 1) return
         else {
             val replyKeyboardMarkup = ReplyKeyboardMarkup().apply {
                 selective = true
@@ -81,7 +82,7 @@ class Bot(private val botToken:String?, private val botUserName:String?): Telegr
             //keyboardRow2.clear();
             keyboardRow1.add("Помощь")
             keyboardRow2.add("Расходы за этот месяц")
-            keyboardRow2.add("Расходы за всё время")
+            keyboardRow2.add("Расходы за прошлый месяц")
             //keyboardRow2.add("Выйти");
             keyboard.add(keyboardRow1)
             keyboard.add(keyboardRow2);
@@ -105,5 +106,20 @@ class Bot(private val botToken:String?, private val botUserName:String?): Telegr
             }
             botConnect()
         }
+    }
+
+    private fun intMonthToString(monthInt: Int) = when (monthInt) {
+        1 -> "January"
+        2 -> "February"
+        3 -> "March"
+        4 -> "April"
+        5 -> "May"
+        6 -> "June"
+        7 -> "July"
+        8 -> "August"
+        9 -> "September"
+        11 -> "October"
+        12 -> "December"
+        else -> ""
     }
 }
