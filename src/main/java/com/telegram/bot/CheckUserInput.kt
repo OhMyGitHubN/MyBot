@@ -18,7 +18,8 @@ class CheckUserInput {
             /table - ссылка на Google-таблицу.
             /list - список доступных категорий.
                         """.trimIndent()
-    private val googleSheetURL = "https://docs.google.com/spreadsheets/d/1Y5jeX_ox55RgjUbQyDfaNJ8QFJEfjsIN5waS-kdYR0I/edit#gid=0"
+//    private val googleSheetURL = "https://docs.google.com/spreadsheets/d/1Y5jeX_ox55RgjUbQyDfaNJ8QFJEfjsIN5waS-kdYR0I/edit#gid=0"
+    private val googleSheetURL = "https://docs.google.com/spreadsheets/d/1vpVGHoR__VyDvf3pU0BLyGZBa-HwD6x-9oOEyANf1W4/edit#gid=0"
 
     //    var flag: Boolean = false
     var checker: String = "commands"
