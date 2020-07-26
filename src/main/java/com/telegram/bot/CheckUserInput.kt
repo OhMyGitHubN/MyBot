@@ -29,18 +29,13 @@ class CheckUserInput {
         checker = "commands"
         if (userInput.isNotEmpty()) {
             when (userInput) {
-                "/start" ->
-                    sendMessage.text = helloText
-                "/help", "Помощь" ->
-                    sendMessage.text = helpText
-                "/table" ->
-                    sendMessage.text = googleSheetURL
+                "/start" -> sendMessage.text = helloText
+                "/help", "Помощь" -> sendMessage.text = helpText
+                "/table" -> sendMessage.text = googleSheetURL
                 "/list" -> {
                     val list: MutableList<String> = ArrayList()
-                    for (t in CategoryTitle.values()) {
+                    for (t in CategoryTitle.values())
                         list.add(t.title)
-                    }
-//                    sendMessage.text = java.lang.String.join("\n", list)
                     sendMessage.text = list.joinToString("\n")
                 }
                 "Расходы за этот месяц", "Расходы за прошлый месяц" -> {
@@ -55,10 +50,19 @@ class CheckUserInput {
         }
     }
 
-//    fun parseUserInputToCategory(userInput: String): String? = userInput.trim().asSequence()
-//            .filter { it.isLetter() }.joinToString("")
-//
-//    fun parseUserInputToAmount(userInput: String): String? = userInput.trim().asSequence()
-//            .filter { !it.isLetter() }.joinToString("")
+    fun intMonthToString(monthInt: Int) = when (monthInt) {
+        1 -> "January"
+        2 -> "February"
+        3 -> "March"
+        4 -> "April"
+        5 -> "May"
+        6 -> "June"
+        7 -> "July"
+        8 -> "August"
+        9 -> "September"
+        11 -> "October"
+        12 -> "December"
+        else -> ""
+    }
 
 }

@@ -35,20 +35,35 @@ class Bot(private val botToken: String?, private val botUserName: String?) : Tel
         val sendMessage = SendMessage().setChatId(chatId)
         try {
             checkUserInput.checkInput(sendMessage, inputText)
-            if (checkUserInput.checker == "commands") {
-//                setMyKeyboard(sendMessage)
-            } else if (checkUserInput.checker == "expenses") {
-                if (inputText.contains("этот", true))
-                    sendMessage.text = googleSheet.readData(intMonthToString(LocalDate.now().monthValue))
-                else
-                    sendMessage.text = googleSheet.readData(intMonthToString(LocalDate.now().monthValue.minus(1)))
-            } else {
-                val list = inputText.partition { it.isLetter() }.toList()
-                if (list.all { it.isNotEmpty() }) {
-                    googleSheet.writeData(list[0], list[1].toDouble())
-                    sendMessage.text = "Данные добавлены!"
-                } else sendMessage.text = "Введены неправильные данные!"
+            when (checkUserInput.checker) {
+                "commands" -> setMyKeyboard(sendMessage)
+                "expenses" ->
+                    if(inputText.contains("этот", true))
+                    sendMessage.text = googleSheet.readData(checkUserInput.intMonthToString(LocalDate.now().monthValue))
+                    else
+                    sendMessage.text = googleSheet.readData(checkUserInput.intMonthToString(LocalDate.now().monthValue.minus(1)))
+                "data" -> {
+                    val list = inputText.partition { it.isLetter() }.toList()
+                    if (list.all { it.isNotEmpty() }) {
+                        googleSheet.writeData(list[0], list[1].toDouble())
+                        sendMessage.text = "Данные добавлены!"
+                    } else sendMessage.text = "Введены неправильные данные!"
+                }
             }
+//            if (checkUserInput.checker == "commands") {
+////                setMyKeyboard(sendMessage)
+//            } else if (checkUserInput.checker == "expenses") {
+//                if (inputText.contains("этот", true))
+//                    sendMessage.text = googleSheet.readData(intMonthToString(LocalDate.now().monthValue))
+//                else
+//                    sendMessage.text = googleSheet.readData(intMonthToString(LocalDate.now().monthValue.minus(1)))
+//            } else {
+//                val list = inputText.partition { it.isLetter() }.toList()
+//                if (list.all { it.isNotEmpty() }) {
+//                    googleSheet.writeData(list[0], list[1].toDouble())
+//                    sendMessage.text = "Данные добавлены!"
+//                } else sendMessage.text = "Введены неправильные данные!"
+//            }
             execute(sendMessage)
         } catch (e: Exception) {
             when (e) {
@@ -106,20 +121,5 @@ class Bot(private val botToken: String?, private val botUserName: String?) : Tel
             }
             botConnect()
         }
-    }
-
-    private fun intMonthToString(monthInt: Int) = when (monthInt) {
-        1 -> "January"
-        2 -> "February"
-        3 -> "March"
-        4 -> "April"
-        5 -> "May"
-        6 -> "June"
-        7 -> "July"
-        8 -> "August"
-        9 -> "September"
-        11 -> "October"
-        12 -> "December"
-        else -> ""
     }
 }
